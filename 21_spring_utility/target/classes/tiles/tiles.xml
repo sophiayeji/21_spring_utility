@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- tiles dtd선언문 -->
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN" "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+
+<tiles-definitions>
+	
+								<!-- WEB-INF 하위경로부터 작성한다 -->
+	<definition name="baseLayout" template="/WEB-INF/views/tiles/layout/layout.jsp"> <!-- 일반적으로 화면 레이아웃 -->
+		<put-attribute name="header" value="/WEB-INF/views/tiles/layout/header.jsp"/> <!-- 일반적으로 화면의 상단부 -->
+		<put-attribute name="footer" value="/WEB-INF/views/tiles/layout/footer.jsp"/> <!-- 일반적으로 화면의 하단부 -->
+		<put-attribute name="side" value="/WEB-INF/views/tiles/layout/side.jsp"/> <!-- 일반적으로 화면의 메뉴(side , aside , nav , menu) -->
+	</definition>
+	
+	<definition name="/aaa" extends="baseLayout"> <!--controller의 return이 됨 -->
+		<put-attribute name="content" value="/WEB-INF/views/tiles/tilesEx/content1.jsp"/> <!-- 일반적으로 화면의 본문 (content , body , main , article)  -->
+		<put-attribute name="title" value="본문1"/>
+	</definition>
+	
+	<definition name="/bbb" extends="baseLayout">
+		<put-attribute name="content" value="/WEB-INF/views/tiles/tilesEx/content2.jsp"/>
+		<put-attribute name="title" value="본문2"/>
+	</definition>
+	
+	<definition name="/ccc" extends="baseLayout">
+		<put-attribute name="content" value="/WEB-INF/views/tiles/tilesEx/content3.jsp"/>
+		<put-attribute name="title" value="본문3"/>
+	</definition>
+	
+	<definition name="dd" extends="baseLayout">
+		<put-attribute name="content" value="/WEB-INF/views/tiles/board/bList.jsp"/>
+		<put-attribute name="title" value="게시글 목록"/>
+	</definition>
+	
+	<definition name="ee" extends="baseLayout">
+		<put-attribute name="content" value="/WEB-INF/views/tiles/board/bWrite.jsp"/>
+		<put-attribute name="title" value="게시글 작성"/>
+	</definition>
+	
+	<definition name="ff" extends="baseLayout">
+		<put-attribute name="content" value="/WEB-INF/views/tiles/board/bUpdate.jsp"/>
+		<put-attribute name="title" value="게시글 수정"/>
+	</definition>
+	
+	<definition name="gg" extends="baseLayout">
+		<put-attribute name="content" value="/WEB-INF/views/tiles/board/bDelete.jsp"/>
+		<put-attribute name="title" value="게시글 삭제"/>
+	</definition>
+
+</tiles-definitions>
