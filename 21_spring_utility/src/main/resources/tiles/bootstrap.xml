@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN" "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+<tiles-definitions>
+	
+								<!-- WEB-INF 하위경로부터 작성한다 -->
+	<definition name="bootstrap" template="/WEB-INF/views/tiles/bootstrap/layout/layout.jsp"> <!-- 일반적으로 화면 레이아웃 -->
+		<put-attribute name="header" value="/WEB-INF/views/tiles/bootstrap/layout/header.jsp"/> <!-- 일반적으로 화면의 상단부 -->
+		<put-attribute name="footer" value="/WEB-INF/views/tiles/bootstrap/layout/footer.jsp"/> <!-- 일반적으로 화면의 하단부 -->
+	</definition>
+	
+	<definition name="/index" extends="bootstrap"> <!--controller의 return이 됨 -->
+		<put-attribute name="content" value="/WEB-INF/views/tiles/bootstrap/contents/index.jsp"/> <!-- 일반적으로 화면의 본문 (content , body , main , article)  -->
+		<put-attribute name="title" value="메인"/>
+	</definition>
+	
+	<definition name="/blog" extends="bootstrap"> <!--controller의 return이 됨 -->
+		<put-attribute name="content" value="/WEB-INF/views/tiles/bootstrap/contents/blog.jsp"/> <!-- 일반적으로 화면의 본문 (content , body , main , article)  -->
+		<put-attribute name="title" value="블로그"/>
+	</definition>
+	
+	<definition name="/shop" extends="bootstrap"> <!--controller의 return이 됨 -->
+		<put-attribute name="content" value="/WEB-INF/views/tiles/bootstrap/contents/shop.jsp"/> <!-- 일반적으로 화면의 본문 (content , body , main , article)  -->
+		<put-attribute name="title" value="리스트"/>
+	</definition>
+	
+</tiles-definitions>
